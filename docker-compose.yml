@@ -1,0 +1,22 @@
+version: "3"
+services:
+  frontend:
+    container_name: friend-secret_web
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    image: leonardo-anjos/friend-secret_web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./webapp
+  backend:
+    container_name: friend-secret_server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: leonardo-anjos/friend-secret_server
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./server

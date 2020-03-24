@@ -43,12 +43,12 @@ After installing node, this project will need yarn too, so just run the followin
 
     $ git clone https://github.com/leonardo-anjos/friend-secret.git
 
-## Run project with docker
+## Run project with docker-compose
 
 ```
-# build docker image
-$ docker build -f Dockerfile -t friend-secret .
+# this will create docker images and volumes which will run in the containers
+$ docker-compose up
 
-# run image
-$ docker run --name friend-secret -p 8069:8069 friend-secret
+# if you want to build your images before starting your containers
+$ docker-compose up --build
 ```

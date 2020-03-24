@@ -1,13 +1,10 @@
-FROM node:12.14.0
+FROM node:lts-slim
 
-COPY . /app
+RUN mkdir -p /usr/src/app
 
-ENV NODE_ENV development
-
-WORKDIR /app
-
-RUN yarn
+WORKDIR /usr/src/app
 
 EXPOSE 8069
 
-CMD ["yarn", "start"]
+# You can change this
+CMD [ "npm", "run", "dev" ]

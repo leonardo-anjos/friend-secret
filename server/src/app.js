@@ -6,12 +6,12 @@ const path = require("path");
 
 const app = express();
 
-// const frontPath = path.join(__dirname, '..', '..', 'webapp/build');
+const frontPath = path.join(__dirname, "..", "..", "webapp/build");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-// app.use(express.static(frontPath));
+app.use(express.static(frontPath));
 
 app.get("/", (req, res, next) => {
   res.json({ appName: "app-name" });
